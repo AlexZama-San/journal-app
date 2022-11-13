@@ -1,10 +1,15 @@
 import { StartOutlined } from "@mui/icons-material"
 import { Grid, Typography } from "@mui/material"
+import { useSelector } from "react-redux"
 
 
 export const NothingSelectedView = () => {
+
+  const { isSaving } = useSelector( state => state.journal)
+
   return (
     <Grid container
+    className= { !isSaving ? '' : "animate__animated animate__backOutUp animate__faster"}
     spacing={0}
     direction="column"
     alignItems="center"

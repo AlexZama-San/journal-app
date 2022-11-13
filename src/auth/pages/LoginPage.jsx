@@ -7,14 +7,16 @@ import { useForm } from "../../hooks/useForm"
 import { checkingAuth, startGoogleSignIn, startLoginWithEmailAndPassword } from "../../store/auth/thunks"
 import { AuthLayout } from "../layout/AuthLayout"
 
+const formData = {
+  email: '',
+  password: ''
+}
+
 export const LoginPage = () => {
 
 
   const dispatch = useDispatch()
-  const {email,password, onInputChange, formState} = useForm({
-    email: '',
-    password: ''
-  })
+  const {email,password, onInputChange} = useForm(formData)
 
   const {status, errorMessage} = useSelector(state => state.auth)
 
