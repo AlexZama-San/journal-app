@@ -1,6 +1,7 @@
 
 export const fileUpload = async (file) => {
-    if (!file) throw new Error('file not found')
+    // if (!file) throw new Error('file not found')
+    if (!file) return null
 
     const cloudUrl = 'https://api.cloudinary.com/v1_1/dn9cihky8/upload'
     const formData = new FormData()
@@ -14,7 +15,6 @@ export const fileUpload = async (file) => {
             body: formData
         })
 
-        console.log(resp);
 
         if (!resp.ok) {
             throw new Error('Error uploading image')
@@ -24,6 +24,8 @@ export const fileUpload = async (file) => {
         return cloudResponse.secure_url
 
     } catch (error) {
-        throw new Error(error.message)
+        // throw new Error(error.message)
+
+        return null
     }
 }
