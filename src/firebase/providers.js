@@ -64,7 +64,8 @@ export const registerUserWithEmailAndPassword = async({email, password, displayN
                 ok: true,
                 uid,
                 displayName,
-                photoURL
+                photoURL,
+                errorMessage: null
             }
         } catch (error) {
             return {ok: false, errorMessage: error.message}

@@ -1,4 +1,4 @@
-import { Google } from "@mui/icons-material"
+import  Google  from "@mui/icons-material/Google"
 import { Alert, Button, Grid, Link, TextField, Typography } from "@mui/material"
 import { useMemo } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -71,7 +71,7 @@ export const LoginPage = () => {
                 </Button>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Button onClick={onGoogleSignIn} disabled={isAuthenticating} variant="contained" fullWidth sx={{mt: 2}}>
+                <Button aria-label="google-btn" onClick={onGoogleSignIn} disabled={isAuthenticating} variant="contained" fullWidth sx={{mt: 2}}>
                   <Google/>
                     <Typography sx={{ml: 1}}>
                       Google
